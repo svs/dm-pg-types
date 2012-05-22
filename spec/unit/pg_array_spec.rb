@@ -7,7 +7,7 @@ try_spec do
         class User
           include DataMapper::Resource
           property :id, Serial
-          property :things, DecimalArray
+          property :things, DecimalArray, :precision => 8, :scale => 6
         end
 
         @property = User.properties[:things]

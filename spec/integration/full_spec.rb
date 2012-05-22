@@ -5,7 +5,7 @@ describe "dm-pg-types" do
     # Create the table manually before running this spec.
     DataMapper.setup(:default, 'postgres://svs@localhost/dm_pg_types_person')
     DataMapper.repository(:default).adapter.execute("DROP TABLE IF EXISTS people")
-    DataMapper.repository(:default).adapter.execute("CREATE EXTENSION HSTORE")
+    DataMapper.repository(:default).adapter.execute("CREATE EXTENSION HSTORE") rescue nil
     class Person
       include DataMapper::Resource
       
