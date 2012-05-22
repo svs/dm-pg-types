@@ -1,4 +1,5 @@
 require 'dm-core'
+
 module DataMapper
   class Property
     class DecimalArray < Object

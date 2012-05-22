@@ -1,5 +1,5 @@
 require 'dm-core'
-require 'debugger'
+
 module DataMapper
   class Property
     class HStore < Object
