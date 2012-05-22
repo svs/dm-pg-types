@@ -26,3 +26,5 @@ p.save
 
 ```
 
+Thanks to https://github.com/softa/activerecord-postgres-hstore for doing most of the heavy lifting
+

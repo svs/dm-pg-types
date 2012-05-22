@@ -13,6 +13,9 @@ module DataMapper
       def dump(value)
         return "" unless value
         
+        # following code lifted from https://github.com/softa/activerecord-postgres-hstore/blob/master/lib/activerecord-postgres-hstore/hash.rb
+
+        
         value.map { |idx, val| 
           iv = [idx,val].map { |_| 
             e = _.to_s.gsub(/"/, '\"')
