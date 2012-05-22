@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.email = "svs [a] svs [d] io"
   s.extra_rdoc_files = [
     "LICENSE",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     "Gemfile",
