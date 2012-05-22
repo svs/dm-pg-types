@@ -1,4 +1,4 @@
-= dm-pg-types
+# dm-pg-types
 
 DataMapper plugin providing support for PostgreSQL's HSTORE and ARRAY types. An example will suffice
 
