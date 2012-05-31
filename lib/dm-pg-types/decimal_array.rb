@@ -8,8 +8,8 @@ module DataMapper
 
       def initialize(model, name, options = {})
         super
-        @precision = @options.fetch(:precision)
-        @scale     = @options.fetch(:scale)
+        @precision = @options[:precision] || 10
+        @scale     = @options[:scale]     || 0
 
         unless @precision > 0
           raise ArgumentError, "precision must be greater than 0, but was #{@precision.inspect}"
