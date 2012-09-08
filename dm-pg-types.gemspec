@@ -64,7 +64,6 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rake>, ["~> 0.9.2"])
       s.add_runtime_dependency(%q<rspec>, ["~> 1.3.2"])
       s.add_runtime_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_runtime_dependency(%q<json_pure>, ["~> 1.6"])
       s.add_runtime_dependency(%q<data_mapper>, ["~> 1.2.0"])
       s.add_runtime_dependency(%q<dm-postgres-adapter>, ["~> 1.2.0"])
     else
@@ -79,7 +78,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rake>, ["~> 0.9.2"])
       s.add_dependency(%q<rspec>, ["~> 1.3.2"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_dependency(%q<json_pure>, ["~> 1.6"])
       s.add_dependency(%q<data_mapper>, ["~> 1.2.0"])
       s.add_dependency(%q<dm-postgres-adapter>, ["~> 1.2.0"])
     end
@@ -95,7 +93,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rake>, ["~> 0.9.2"])
     s.add_dependency(%q<rspec>, ["~> 1.3.2"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-    s.add_dependency(%q<json_pure>, ["~> 1.6"])
     s.add_dependency(%q<data_mapper>, ["~> 1.2.0"])
     s.add_dependency(%q<dm-postgres-adapter>, ["~> 1.2.0"])
   end
