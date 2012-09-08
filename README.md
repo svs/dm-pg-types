@@ -1,5 +1,15 @@
 # dm-pg-types
 
+# Installation
+
+dm-pg-types is available as a RubyGem. Simply put this in your Gemfile
+
+```
+gem 'dm-pg-types'
+```
+
+and you should be good to go.
+
 DataMapper plugin providing support for PostgreSQL's HSTORE and ARRAY types. An example will suffice
 
 ```ruby
