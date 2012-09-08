@@ -3,7 +3,7 @@
 DataMapper plugin providing support for PostgreSQL's HSTORE and ARRAY types. An example will suffice
 
 ```ruby
-  DataMapper.setup(:default, 'postgres://svs@localhost/dm_pg_types_person')
+DataMapper.setup(:default, 'postgres://svs@localhost/dm_pg_types_person')
 DataMapper.repository(:default).adapter.execute("DROP TABLE IF EXISTS people")
 DataMapper.repository(:default).adapter.execute("CREATE EXTENSION HSTORE")
 
