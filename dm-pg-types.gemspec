@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "dm-pg-types"
-  s.version = "0.8.1"
+  s.version = "0.8.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["svs"]
@@ -50,7 +50,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/svs/dm-pg-types"
   s.require_paths = ["lib"]
   s.rubyforge_project = "dm-pg-types"
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.23"
   s.summary = "DataMapper plugin providing HSTORE and ARRAY datatype support for postgres"
 
   if s.respond_to? :specification_version then
