@@ -2,7 +2,7 @@ require 'dm-core'
 
 module DataMapper
   class Property
-    class DecimalArray < Object
+    class DecimalArray < PgArray
       accept_options :precision, :scale, :min, :max
       attr_reader :precision, :scale, :min, :max
 
@@ -18,11 +18,7 @@ module DataMapper
 
 
       def load(value)
-        value.gsub(/[{}]/,'').split(",").map(&:to_f) if value
-      end
-
-      def dump(value)
-        "{#{value.join(",")}}" if value
+        super.map(&:to_f) if value
       end
     end # class DecimalArray
   end # class Property
