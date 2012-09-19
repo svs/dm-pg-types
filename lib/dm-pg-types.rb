@@ -5,19 +5,25 @@ require 'dm-postgres-adapter'
 
 module DataMapper
   class Property
+    autoload :PgArray,            'dm-pg-types/pg_array'
     autoload :HStore,             'dm-pg-types/hstore'
     autoload :DecimalArray,       'dm-pg-types/decimal_array'
+    autoload :StringArray,        'dm-pg-types/string_array'
   end
 
   module Migrations
     module PostgresAdapter
       def property_schema_hash(property)
         schema = super
-        
+
         if property.kind_of?(Property::DecimalArray)
           schema[:primitive] = "#{schema[:primitive]}(#{property.precision},#{property.scale})[]"
           schema[:precision] = schema[:scale] = nil
+        elsif property.kind_of?(Property::StringArray)
+          schema[:primitive] = "#{schema[:primitive]}(#{property.length})[]"
+          schema[:length] = nil
         end
+
         schema
       end
     end
@@ -27,7 +33,7 @@ module DataMapper
     def self.included(base)
       base.extend ClassMethods
     end
-    
+
     module ClassMethods
       # Types for PostgreSQL databases.
       #
@@ -37,7 +43,8 @@ module DataMapper
       def type_map
         super.merge(
                     Property::HStore => {:primitive => 'HSTORE'},
-                    Property::DecimalArray => {:primitive => "NUMERIC"}
+                    Property::DecimalArray => {:primitive => "NUMERIC"},
+                    Property::StringArray => {:primitive => "VARCHAR"}
                     ).freeze
       end
     end
