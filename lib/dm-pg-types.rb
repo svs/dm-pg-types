@@ -5,6 +5,7 @@ require 'dm-postgres-adapter'
 
 module DataMapper
   class Property
+    autoload :PgArray,            'dm-pg-types/pg_array'
     autoload :HStore,             'dm-pg-types/hstore'
     autoload :DecimalArray,       'dm-pg-types/decimal_array'
     autoload :StringArray,        'dm-pg-types/string_array'
