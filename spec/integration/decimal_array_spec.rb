@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-require 'debugger'
 try_spec do
 
   require './spec/fixtures/person'
@@ -35,7 +34,6 @@ try_spec do
 
         describe 'when dumped and loaded again' do
           before :all do
-            debugger
             @resource.save.should be(true)
             @resource.reload
           end
