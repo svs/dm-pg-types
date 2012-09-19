@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["svs"]
-  s.date = "2012-09-08"
+  s.date = "2012-09-19"
   s.description = "DataMapper plugin providing HSTORE and ARRAY datatype support for postgres"
   s.email = "svs [a] svs [d] io"
   s.extra_rdoc_files = [
@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/svs/dm-pg-types"
   s.require_paths = ["lib"]
   s.rubyforge_project = "dm-pg-types"
-  s.rubygems_version = "1.8.23"
+  s.rubygems_version = "1.8.24"
   s.summary = "DataMapper plugin providing HSTORE and ARRAY datatype support for postgres"
 
   if s.respond_to? :specification_version then
@@ -62,8 +62,8 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<dm-do-adapter>, ["~> 1.2.0"])
       s.add_runtime_dependency(%q<dm-postgres-adapter>, ["~> 1.2.0"])
       s.add_runtime_dependency(%q<rake>, ["~> 0.9.2"])
-      s.add_runtime_dependency(%q<rspec>, ["~> 1.3.2"])
-      s.add_runtime_dependency(%q<jeweler>, ["~> 1.8.4"])
+      s.add_development_dependency(%q<rspec>, ["~> 1.3.2"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_runtime_dependency(%q<data_mapper>, ["~> 1.2.0"])
       s.add_runtime_dependency(%q<dm-postgres-adapter>, ["~> 1.2.0"])
     else

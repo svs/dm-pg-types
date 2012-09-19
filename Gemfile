@@ -16,6 +16,8 @@ gem 'dm-do-adapter',      DM_VERSION
 gem 'dm-postgres-adapter', DM_VERSION
 
 gem 'rake',           '~> 0.9.2'
-gem 'rspec',          '~> 1.3.2'
 
-gem 'jeweler', '~> 1.8.4'
+group :development do
+  gem 'rspec', '~> 1.3.2'
+  gem 'jeweler', '~> 1.8.4'
+end
