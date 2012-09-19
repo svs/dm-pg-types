@@ -13,6 +13,7 @@ describe "dm-pg-types" do
       property :name, String
       property :info, HStore
       property :decimals, DecimalArray, :scale => 5, :precision => 10
+      property :aliases, StringArray, :length => 10
     end
 
     DataMapper.finalize
@@ -21,6 +22,7 @@ describe "dm-pg-types" do
     p = Person.new
     p.info = {:a => "b", :c => "d"}
     p.decimals = [10.1, 11.2]
+    p.aliases = ["Bob", "George"]
     p.save
     @p = Person.last
   end
@@ -31,6 +33,10 @@ describe "dm-pg-types" do
 
   it "should provide a person with decimals" do
     @p.decimals.should == [10.1,11.2]
+  end
+
+  it "should provide a person with aliases" do
+    @p.aliases.should == ['Bob', 'George']
   end
 
 end

@@ -15,6 +15,7 @@ module DataMapper
       property :name,       String
       property :other_information, HStore
       property :numbers,    DecimalArray
+      property :aliases,    StringArray
     end
   end
 end
