@@ -19,7 +19,7 @@ begin
     gem.add_dependency 'data_mapper', '~> 1.2.0'	
     gem.add_dependency 'dm-postgres-adapter', '~> 1.2.0'	
     
-    gem.version = "0.8.1"
+    gem.version = "0.8.2"
   end
 
   Jeweler::GemcutterTasks.new
