@@ -8,6 +8,7 @@ module DataMapper
     autoload :PgArray,            'dm-pg-types/pg_array'
     autoload :HStore,             'dm-pg-types/hstore'
     autoload :DecimalArray,       'dm-pg-types/decimal_array'
+    autoload :IntegerArray,       'dm-pg-types/integer_array'
     autoload :StringArray,        'dm-pg-types/string_array'
   end
 
@@ -19,6 +20,8 @@ module DataMapper
         if property.kind_of?(Property::DecimalArray)
           schema[:primitive] = "#{schema[:primitive]}(#{property.precision},#{property.scale})[]"
           schema[:precision] = schema[:scale] = nil
+        elsif property.kind_of?(Property::IntegerArray)
+          schema[:primitive] = "#{schema[:primitive]}[]"
         elsif property.kind_of?(Property::StringArray)
           schema[:primitive] = "#{schema[:primitive]}(#{property.length})[]"
           schema[:length] = nil
@@ -44,6 +47,7 @@ module DataMapper
         super.merge(
                     Property::HStore => {:primitive => 'HSTORE'},
                     Property::DecimalArray => {:primitive => "NUMERIC"},
+                    Property::IntegerArray => {:primitive => "INTEGER"},
                     Property::StringArray => {:primitive => "VARCHAR"}
                     ).freeze
       end
