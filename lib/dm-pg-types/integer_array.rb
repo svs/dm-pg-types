@@ -8,7 +8,7 @@ module DataMapper
       end
 
       def load(value)
-        super.map(&:to_f) if value
+        super.map(&:to_i) if value
       end
     end # class IntegerArray
   end # class Property
