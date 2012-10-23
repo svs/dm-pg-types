@@ -24,6 +24,7 @@ class Person
   property :name,      String
   property :info,      HStore
   property :decimals,  DecimalArray, :scale => 5, :precision => 10
+  property :integers,  IntegerArray
 end
 
 DataMapper.finalize
@@ -32,6 +33,7 @@ DataMapper.auto_migrate!
 p = Person.new
 p.info = {:a => "b", :c => "d"}
 p.decimals = [10.1, 11.2]
+p.integers = [2,3,99]
 p.save
 
 ```
