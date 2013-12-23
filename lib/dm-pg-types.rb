@@ -20,7 +20,7 @@ module DataMapper
           schema[:primitive] = "#{schema[:primitive]}(#{property.precision},#{property.scale})[]"
           schema[:precision] = schema[:scale] = nil
         elsif property.kind_of?(Property::StringArray)
-          schema[:primitive] = "#{schema[:primitive]}(#{property.length})[]"
+          schema[:primitive] = "#{schema[:primitive]}[]"
           schema[:length] = nil
         end
 
@@ -44,7 +44,7 @@ module DataMapper
         super.merge(
                     Property::HStore => {:primitive => 'HSTORE'},
                     Property::DecimalArray => {:primitive => "NUMERIC"},
-                    Property::StringArray => {:primitive => "VARCHAR"}
+                    Property::StringArray => {:primitive => "TEXT"}
                     ).freeze
       end
     end
